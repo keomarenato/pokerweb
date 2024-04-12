@@ -1,0 +1,28 @@
+<h2 class="mb-4 text-center">Ranking</h2>
+<div class="container my-5 py-3">
+  <div class="ranking">
+    <ng-container *ngFor="let campeonatoNome of campeonatoNomes; let index = index">
+      <h3 class="text-center">
+        <button class="btn btn-link" type="button" 
+                data-bs-toggle="collapse" 
+                [attr.data-bs-target]="'#campeonatoCollapse' + index" 
+                aria-expanded="false" 
+                [attr.aria-controls]="'campeonatoCollapse' + index">
+          Campeonato: {{ campeonatoNome }}
+        </button>
+      </h3>
+      <div [id]="'campeonatoCollapse' + index" class="collapse">
+        <ol class="list-group">
+          <li *ngFor="let participante of rankingsPorCampeonato[campeonatoNome]; let i = index" 
+              class="list-group-item d-flex justify-content-between align-items-center" 
+              [ngClass]="{'bg-light': i < 3}">
+            <div class="d-flex align-items-center">
+              <span class="fw-bold">{{ participante.nome }}</span>
+            </div>
+            <span class="badge bg-secondary rounded-pill">{{ participante.participacoes }} participações</span>
+          </li>
+        </ol>
+      </div>
+    </ng-container>
+  </div>
+</div>

@@ -1,0 +1,107 @@
+ 
+
+.ranking {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  margin-top: -60px;
+  
+}
+
+.list-group-item {
+  border: 1px solid rgba(0, 0, 0, .125);
+  margin-bottom: 0.5rem;
+  padding: 1rem 1.5rem;  
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+  border-radius: .25rem;  
+}
+
+.list-group-item.bg-light {
+  background-color: #f8f9fa;
+  border-left: .25rem solid var(--bs-primary);
+}
+
+.badge.bg-secondary {
+  background-color: #007bff;  
+  font-weight: bold;  
+}
+
+.fw-bold {
+  font-weight: 600; 
+}
+
+.text-center {
+  margin-bottom: 30px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.btn-link {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 1.25rem;
+  background-color: transparent;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  width: 100%;
+ 
+}
+
+.btn-link:hover {
+  color: var(--bs-dark);
+  background-color: var(--bs-light);
+  text-decoration: none;
+  transform: scale(1.05); /* Adicionando um efeito de escala no hover */
+}
+
+
+
+.list-group-item {
+  border: none;
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+  background-color: #f8f9fa;
+}
+
+.list-group-item:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.list-group-item.bg-light {
+  border-left: 0.5rem solid var(--bs-primary);
+}
+
+.badge.bg-secondary {
+  background-color: var(--bs-blue);
+  color: #fff;
+}
+
+.text-center h3 {
+  font-size: 1.5rem;
+  color: var(--bs-dark);
+  margin-bottom: 1rem;
+}
+
+.list-group {
+  margin-bottom: 2rem;
+}
+
+.btn-link {
+  font-size: 1.25rem;  
+  background-color: transparent;  
+  border: none;  
+  padding: .5rem 1rem;  
+  border-radius: .25rem;  
+  border-bottom: 1px solid black;
+  box-shadow: 3px 3px 3px black;
+}
+
+.btn-link:hover {
+  color: var(--bs-dark); 
+  background-color: var(--bs-light);  
+  text-decoration: none;  
+}

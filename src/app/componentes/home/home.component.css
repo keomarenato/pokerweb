@@ -1,0 +1,22 @@
+ 
+
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  
+    height: 100vh; 
+    background-image: url('../../assets/reipo.webp');
+    background-size: cover;
+    background-position: center center;  
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;  
+}
+
+.ImageContainer img {
+    width: auto;  
+    height: auto;  
+    margin-top: -500px;
+    opacity: 8; 
+}

@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+/* Estilização da tabela */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.table th,
+.table td {
+  padding: 12px 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.table th {
+  background-color: #000; /* Preto para cabeçalho */
+  color: #ffd700; /* Amarelo para texto no cabeçalho */
+  font-weight: 800; /* Tipografia mais forte para cabeçalho */
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.valor-total {
+  font-weight: bold;
+  color: #28a745; 
+}
+
+.participante-badge {
+  background-color: #000; 
+  color: #ffd700; 
+  padding: 0.35em 0.6em;
+  margin-right: 0.5em;
+  border-radius: 0.25em;
+  font-weight: 700; 
+}
+
+ 
+
+.btn-outline-danger:hover {
+  color: #ffd700;
+  background-color: #000; 
+  border-color: #ffd700;
+}

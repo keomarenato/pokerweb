@@ -1,0 +1,340 @@
+.modal-dialog {
+  margin: 1.75rem auto;
+}
+
+
+.custom-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10rem;
+}
+
+.btn-custom {
+  width: auto;
+  margin-right: 1rem;
+  margin-bottom: 30px;
+  background-color: #e8eae6;
+  color: black;
+}
+
+ 
+.btn-custom:hover {
+  color: white;
+  background-color: black;
+}
+
+.form-check-input:checked+.form-check-label {
+  background-color: #D1E7DD;
+  color: #0F5132;
+}
+
+
+
+.form-check-label {
+  padding: 0.375rem;
+  margin-left: -0.375rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.form-check-label.bg-light {
+  border-radius: 0.375rem;
+}
+
+.modal-header,
+.modal-footer {
+  border: none;
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+.btn-outline-secondary {
+  margin-right: 0.5em;
+}
+
+.nav-link {
+  color: black;
+  background-color: #e8eae6;
+  width: 22%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.nav-link:hover {
+  color: white;
+  background-color: black;
+}
+
+
+ 
+.container {
+  margin-top: 20px;
+}
+
+/* Estilos do cartão */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.card-subtitle {
+  font-size: 1rem;
+  color: #666;
+}
+
+.card-body {
+  padding: 15px;
+  max-height: 400px; /* Define a altura máxima do card-body */
+  overflow-y: auto;
+}
+
+.list-group-item {
+  border: none;
+  padding: 10px 15px;
+}
+
+
+.input-group {
+  margin-top: 10px;
+}
+
+.input-group input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px 12px;
+  height: 38px;
+  /* Altura padrão para alinhar com botões */
+}
+
+.btn-danger {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c9302c;
+  border-color: #ac2925;
+}
+
+/* Ícones dos botões */
+.fas {
+  margin-right: 5px;
+}
+ 
+.modal-body-scrollable {
+  max-height: calc(100vh - 210px);
+  overflow-y: auto;
+}
+
+ 
+
+.modalCriar {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Modal para Listar Campeonatos Finalizados */
+
+.valor-total {
+  font-weight: bold;
+  color: #28a745; 
+}
+
+
+.modal-dialog.modal-xl {
+  max-width: 100%; 
+}
+
+.modal-body .col-2.text-end .valor-total {
+  padding-right: 20px;  
+}
+
+.modal-body td > div > p {
+  margin-bottom: 0; 
+}
+
+
+.table {
+  width: 100%; 
+  margin-bottom: 0; 
+}
+
+.table th, .table td {
+  padding: 0.5rem; 
+  vertical-align: middle; 
+}
+
+.table th {
+  background-color: #000; 
+  color: #ffd700; 
+}
+
+.table tbody tr {
+  background-color: #fff; 
+  color: #000;
+}
+
+.list-unstyled {
+  padding-left: 0; 
+}
+
+.modal-footer {
+ 
+  color: #fff; 
+}
+
+.btn-warning {
+  background-color: #ffd700;
+  color: #000;
+}
+
+.btn-primary {
+  background-color: #0056b3; 
+  border-color: #0056b3; 
+}
+
+.btn-primary:hover {
+  background-color: #00376b;
+  border-color: #00376b; 
+}
+
+/* Modal para Listar Campeonatos Finalizados */
+
+
+.modal-content {
+  background: #f8f9fa;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+}
+
+.form-check-input:checked + .form-check-label {
+  background-color: #D6E9C6; 
+  border-radius: 0.25rem;  
+  font-weight: bold; 
+  color: #34568B; 
+  padding: 0.375rem 0.75rem 0.375rem 2rem; 
+  margin-left: 0;  
+  transition: background-color 0.3s ease; 
+}
+
+
+.form-check-label {
+  padding: 0.375rem 0.75rem 0.375rem 2rem; /* Espaço à esquerda para o checkbox */
+  margin-bottom: 0;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+ 
+.form-check-label:hover {
+  background-color: #f8f9fa;
+}
+
+
+
+/* Cabeçalho do modal com cor de destaque */
+.modal-header {
+  background-color: #34568B;
+  color: #ffffff;
+  padding: 16px 24px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+
+.custom-button {
+  display: block; 
+  width: 12%; 
+  white-space: nowrap; 
+  text-align: center; 
+  padding: 0.5rem 1rem; 
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+  border-radius: 0.25rem;
+  margin-top: 60px;
+
+}
+
+/* Responsividade */
+ 
+
+ 
+ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+button {
+  flex-shrink: 0;
+ 
+}
+
+ 
+.col-md-3 {
+  margin-bottom: 20px;
+}
+
+ 
+.card-text,
+.card-subtitle,
+.card-title {
+  margin-bottom: 10px;
+}
+
+.modal-footer .btn {
+  margin: 0 8px;  
+  padding: 5px 15px;  
+}
+
+ 
+.modal-footer .btn:hover {
+  opacity: 0.8;
+}
+
+
+@media (max-width: 575.98px) { 
+  .modal-dialog {
+    margin: 0.5rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal-dialog {
+    max-width: 80%;
+  }
+}
+
+@media (min-width: 992px) {
+  .modal-dialog {
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .modal-dialog {
+    max-width: 30%;
+  }
+}

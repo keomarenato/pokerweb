@@ -1,0 +1,92 @@
+@import '@fortawesome/fontawesome-free/css/all.css';
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+  border-radius: 5px;
+  top: 0;
+  width: 100%;
+  background-color: #e8eae6;
+ 
+}
+
+.modal {
+  z-index: 1000;
+}
+
+.content {
+  margin-top: 50px; /* Ajuste a altura da barra de navegação */
+}
+
+.nav-item {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.bg-blue {
+  background-color: #e8eae6;
+  color: black;
+}
+
+.bg-blue a {
+  color: black;  
+}
+
+
+.nav-link {
+  color: white;
+  padding: 10px 20px;  
+}
+
+.bg-blue a:hover {
+  color: white;
+  background-color: black;
+  border-radius: 3px;
+}
+
+.active {
+  border-bottom: 3px solid blue;  
+}
+
+.bg-blue a:hover {
+  color: white;
+  background-color: black;
+  border-radius: 3px;
+}
+
+.navStyle {
+  padding: 10px 20px;
+}
+
+
+.btn-add {
+  color: black;
+  background-color: yellow;
+  border: none;
+}
+
+.btn-add:hover {
+  color: yellow;
+  background-color: black;
+  border: none;
+}
+
+.btn-del {
+  color: white;
+  background-color: #ff6154;
+  border: none;
+}
+
+.btn-del:hover {
+  color: black;
+  background-color: red;
+}
+
+.no-hover:hover {
+  background-color: transparent !important;
+  color: inherit !important;
+  text-decoration: none !important;
+}

@@ -1,0 +1,48 @@
+<div class="container my-5 py-3">
+  <div class="row">
+    <div class="col">
+      <div class="table-responsive">
+        <table class="table align-middle">
+          <thead>
+            <tr class="table-dark">
+              <th scope="col">Nome do Campeonato</th>
+              <th scope="col">Data do Campeonato</th>
+              <th scope="col">Partidas</th>
+              <th scope="col">Rake Total</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let registro of registrosCampeonatos; let i = index">
+              <tr [ngClass]="{'table-light': i % 2 === 0, 'table-secondary': i % 2 !== 0}">
+                <td>{{ registro.campeonato.nome }}</td>
+                <td>{{ registro.campeonato.data | date:'dd/MM/yyyy' }}</td>
+                <td>
+                  <ul class="list-unstyled">
+                    <li *ngFor="let partida of registro.campeonato.partidas">
+                      <div>
+                        <strong>{{ partida.data | date:'dd/MM/yyyy' }}</strong>
+                      </div>
+                      <div>Usuarios:
+                        <span *ngFor="let participante of partida.participantes" class="badge bg-warning text-dark me-1">{{ participante.nome }}</span>
+                      </div>
+                      <div>
+                        <p>Rake<span  class="valor-total"> {{ partida.valor | currency }}</span></p>
+                      </div>
+                    </li>
+                  </ul>
+                </td>
+                <td class="valor-total">{{ registro.campeonato.valorTotal | currency }}</td>
+                <td>
+                  <button (click)="deletarRegistroCampeonato(registro.id)" class="btn btn-outline-danger" title="Deletar">
+                    Deletar
+                  </button>
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,160 @@
+.modal-body-scrollable {
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+  }
+
+  .valor-total {
+    font-weight: bold;
+    color: #28a745; 
+  }
+ 
+.valorTotal {
+  font-weight: bold;
+  color: red;
+}
+
+
+
+.modal-content {
+  background: #f8f9fa;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+}
+
+.form-check-input:checked + .form-check-label {
+  background-color: #D6E9C6; 
+  border-radius: 4px; 
+  font-weight: bold; 
+  color: #34568B; 
+  padding: 0.375rem 0.75rem; 
+  margin-left: -0.75rem; 
+  margin-right: 0.75rem;
+  transition: background-color 0.3s ease; 
+}
+
+
+.form-check-label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  padding: 0.375rem 0.75rem;
+  margin-bottom: 0;
+  user-select: none;
+}
+
+
+
+.form-check-label:hover {
+  background-color: #f8f9fa;
+}
+
+/* Cabeçalho do modal com cor de destaque */
+.modal-header {
+  background-color: #34568B;
+  color: #ffffff;
+  padding: 16px 24px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+/* Espaçamento entre os elementos do corpo do modal */
+.modal-body {
+  padding: 24px;
+}
+
+/* Estilização dos campos de entrada e alinhamento dos textos */
+.form-control, .form-check-input {
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+}
+
+/* Alinhamento dos labels com padding para melhor tato */
+.form-check-label {
+  display: block;
+  margin-left: 2.5rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+/* Posicionamento personalizado para o checkbox */
+.form-check-input {
+  position: absolute;
+  margin-top: 0.3rem;
+  margin-left: -2.5rem;
+}
+
+/* Botões com cantos arredondados e sombra suave no hover */
+.btn {
+  border-radius: 4px;
+  padding: 8px 16px;
+  transition: all 0.2s;
+}
+
+/* Estilização para botão de fechar */
+.btn-outline-secondary {
+  color: #6c757d;
+  border-color: #6c757d;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #6c757d;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilização para botão de salvar */
+.btn-outline-success {
+  color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-outline-success:hover {
+  background-color: #28a745;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Feedback visual para inputs em foco */
+.form-control:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+
+.container {
+  margin-bottom: 100px; /* Aumentar se necessário */
+  padding-bottom: 20px; /* Espaço extra no fundo */
+  min-height: calc(100vh - 220px); /* Ajustar com base na altura do seu cabeçalho e rodapé */
+}
+
+/* Estilização da tabela e do modal para evitar sobreposição */
+.table-responsive {
+  overflow-y: auto;
+  margin-bottom: 50px; /* Espaço extra abaixo da tabela */
+}
+
+.modal-body-scrollable {
+  max-height: calc(100vh - 210px); /* Revisar se necessário para caber na tela */
+  overflow-y: auto;
+}
+
+/* Estilizações adicionais para elementos visuais */
+.valor-total, .valorTotal {
+  font-weight: bold;
+}
+
+.valor-total {
+  color: #28a745;
+}
+
+.valorTotal {
+  color: red;
+}
+
+
+.btn-clicado {
+  /* Aqui você pode adicionar estilos especiais para quando o botão é clicado */
+  background-color: red; /* Por exemplo, mudar a cor de fundo para amarelo */
+}

@@ -1,0 +1,115 @@
+/* Estilo para o modal */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin-top: -40px;
+}
+
+/* Estilo para o conteúdo do modal */
+.modal-content {
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 800px;
+  height: auto; /* Alterado para altura automática */
+  overflow-y: auto; /* Adicionando barra de rolagem caso necessário */
+}
+
+/* Estilo para os campos de entrada */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #47aaff;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input:focus {
+  border-color: #007bff;  
+  outline: none;  
+  border-width: 2px;  
+}
+
+/* Estilo para o botão de fechar */
+.close {
+  color: #ff826e;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #ff0800;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Estilo para o rodapé do modal */
+.btn-primary {
+  width: 30%;  
+  max-width: 100px;  
+}
+
+.btn-secondary {
+  width: 30%;  
+  max-width: 100px; 
+  background-color: #ff574d;
+}
+
+.btn-secondary:hover {
+  background-color: red; 
+}
+
+
+.btn-add {
+  color: black;
+  background-color: yellow;
+  border: none;
+}
+
+.btn-add:hover {
+  color: yellow;
+  background-color: black;
+  border: none;
+}
+
+.btn-del {
+  color: white;
+  background-color: #ff6154;
+  border: none;
+}
+
+.btn-del:hover {
+  color: black;
+  background-color: red;
+}
+
+@media only screen and (max-width: 768px) {
+  
+  .modal {
+    width: 90%;  
+  }
+  .form-group {
+    margin-bottom: 10px;  
+  }
+}

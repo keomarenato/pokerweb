@@ -1,0 +1,71 @@
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+
+.img-fluid {
+  width: 80%; 
+  height: auto; 
+}
+
+.h-custom {
+height: calc(100% - 73px);
+}
+
+.form-label {
+  color: black;
+  font-weight: bold;
+}
+
+.form-control:focus{
+  border-color: #ffc107;
+  box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25);
+}
+
+.btn {
+  color: black;
+  background-color: yellow;
+  border: none;
+}
+
+.btn:hover {
+  color: yellow;
+  background-color: black;
+  border: none;
+}
+
+ 
+
+@media (max-width: 768px) {  
+  .h-custom {
+    height: 100%;
+    margin-top: 0;  
+  }
+
+  .img-fluid {
+    width: 100%;  
+    margin-bottom: 0;  
+  }
+
+  .form-outline {
+    margin-bottom: 2rem;  
+  }
+
+  .container-fluid {
+    padding: 0 15px;  
+  }
+
+  .row {
+    margin: 0 -15px; 
+  }
+
+ 
+  .btn-lg {
+    width: auto; 
+    padding-left: 1rem; 
+    padding-right: 1rem; 
+  }
+}

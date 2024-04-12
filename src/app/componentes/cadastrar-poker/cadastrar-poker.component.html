@@ -1,0 +1,148 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="custom-container mt-5"> <!-- Adicionado a classe mt-5 para adicionar margem superior -->
+        <button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#modalCriarCampeonato">
+          Novo Campeonato
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal para Criar Campeonato -->
+<div class="modal fade" id="modalCriarCampeonato" tabindex="-1" aria-labelledby="modalCriarCampeonatoLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalCriarCampeonatoLabel">Criar Campeonato</h5>
+
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="nomeCampeonato" class="form-label">Nome do Campeonato</label>
+          <input type="text" class="form-control" id="nomeCampeonato" [(ngModel)]="nomeCampeonato">
+        </div>
+        <div class="mb-3">
+          <label for="dataCampeonato" class="form-label">Inicio do Campeonato</label>
+          <input type="date" class="form-control" id="dataCampeonato" [(ngModel)]="dataCampeonato">
+        </div>
+      </div>
+      <div class="modalCriar">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+          Fechar
+        </button>
+        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal" (click)="criarCampeonato()">Criar
+          Campeonato
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let campeonato of campeonatos; let i = index">
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card card-campeonato shadow" *ngIf="!campeonato.deletado">
+          <div class="card-header bg-warning text-light">
+            <h5 class="card-title mb-0">Campeonato: {{ campeonato.nome }}</h5>
+          </div>
+          <div class="card-body">
+            <p class="text-muted">Iniciado em: {{ campeonato.data | date:'mediumDate' }}</p>
+            <p><strong>Total Acumulado:</strong> {{ campeonato.valorTotal | currency }}</p>
+            <div class="partidas-container">
+              <ng-container *ngFor="let partida of campeonato.partidas">
+                <div class="partida-item border-bottom pb-2 mb-2">
+                  <div class="d-flex justify-content-between">
+                    <span class="partida-data">{{ partida.data | date: 'longDate' }}</span>
+                    <span class="partida-valor">{{ partida.valor | currency }}</span>
+                  </div>
+
+                  <div class="participantes-lista mt-2">
+                    <strong>Participantes:</strong>
+                    <ul class="list-unstyled">
+                      <li *ngFor="let participante of partida.participantes" class="mt-1">
+                        {{ participante.nome }}
+                        <button class="btn btn-danger btn-sm"
+                          (click)="removerParticipante(campeonato.id, partida.id, participante.id)">
+                          <i class="fas fa-trash-alt"></i>
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+            <!-- Botões de ação -->
+            <div class="d-flex justify-content-between align-items-center">
+              <button type="button" class="btn btn-outline-success" (click)="salvarCampeonato(campeonato.id)">Salvar</button>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <button type="button" class="btn btn-outline-secondary" (click)="selecionarCampeonato(campeonato)" data-bs-toggle="modal" data-bs-target="#selecionarUsuariosModal">Criar Partida </button>
+              <div>
+                <button type="button" class="btn btn-outline-warning" (click)="criarRegistro(campeonato.id)">Finalizar</button>
+                <button type="button" class="btn btn-outline-danger" (click)="deletarCampeonato(campeonato.id)">Deletar</button>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-muted"></div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+
+
+<!-- Modal para selecionar usuários -->
+<div class="modal fade" id="selecionarUsuariosModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel">Selecionar Usuários e Data para Partida</h5>
+      </div>
+
+      <div class="modal-body modal-body-scrollable">
+        <div class="mb-3">
+          <label for="dataPartida" class="form-label">Data da partida:</label>
+          <input *ngIf="!partidaCriada" type="date" class="form-control" id="dataPartida" [(ngModel)]="dataPartida">
+          <p *ngIf="partidaCriada">{{ dataPartida | date: 'longDate' }}</p>
+        </div>
+
+        <div *ngIf="!partidaCriada">
+          <div *ngFor="let usuario of usuarios" class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" [id]="'usuario' + usuario.id"
+              [(ngModel)]="usuario.selecionado" [name]="'usuario' + usuario.id">
+            <label class="form-check-label d-block w-100" for="{{'usuario' + usuario.id}}">
+              {{ usuario.nome }}
+            </label>
+          </div>
+          <p *ngIf="usuarios.length === 0" class="text-muted">Nenhum usuário disponível para adicionar à partida.</p>
+        </div>
+        <!-- Campo de entrada para o valor do Rake -->
+        <div class="input-group mb-3" *ngIf="!partida.inputRemovido">
+          <input type="number" [(ngModel)]="partida.valor" class="form-control" placeholder="Rake"
+            (ngModelChange)="atualizarValorPartida(campeonato.id, partida.id, partida.valor)">
+
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <div *ngIf="!partidaCriada" class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-outline-success"  (click)="criarPartida()">Salvar
+            Partida
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ 

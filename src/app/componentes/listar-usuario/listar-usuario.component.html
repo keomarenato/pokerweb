@@ -1,0 +1,127 @@
+<li class="nav-item">
+  <a class="nav-link navStyle cadastro-link" data-bs-toggle="modal" href="#exampleModalToggle">
+    Cadastrar
+  </a>
+</li>
+ 
+ <div class="container lista-usuarios">
+  
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>CPF</th>
+          <th>Telefone</th>
+          <th>CEP</th>
+          <th>Rua</th>
+          <th>Número</th>
+          <th>Bairro</th>
+          <th>Cidade</th>
+          <th>UF</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngIf="usuarios$ | async as usuarios; else semUsuarios">
+          <tr *ngFor="let usuario of usuarios" class="list">
+            <td>{{ usuario.nome }}</td>
+            <td>{{ usuario.cpf }}</td>
+            <td>{{ usuario.fone }}</td>
+            <td>{{ usuario.cep }}</td>
+            <td>{{ usuario.logradouro }}</td>
+            <td>{{ usuario.numero }}</td>
+            <td>{{ usuario.bairro }}</td>
+            <td>{{ usuario.localidade }}</td>
+            <td>{{ usuario.uf }}</td>
+            <td>
+              <a  [routerLink]="['../listarUser', usuario.id]" class="editar-button btn me-2">
+                <i class="fas fa-pencil-alt"></i>  
+              </a>
+            </td>
+            <td>
+              <button (click)="removerUsuario(usuario.id)" *ngIf="usuario.id" class="excluir-button btn btn-danger ms-2">
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #semUsuarios>
+    <p class="sem-cadastro-message">Ainda não há usuários cadastrados</p>
+  </ng-template>
+</div>
+ 
+
+
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+    tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <form>
+
+            <div class="row">
+              <div class="col">
+                <label>Nome</label>
+                <input type='text' [(ngModel)]="criarUsuario.nome" name="uf" id='nome' class="form-control" />
+              </div>
+              <div class="col">
+                <label>Telefone</label>
+                <input type='number' [(ngModel)]="criarUsuario.fone" name="fone" id='fone' class="form-control" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label>CPF</label>
+                <input type='number' [(ngModel)]="criarUsuario.cpf" name="cpf" id='cpf' class="form-control"   />
+              </div>
+              <div class="col">
+                <label>CEP</label>
+                <input type='text' [(ngModel)]="criarUsuario.cep" name="cep" id='cep' class="form-control" (change)="handleCepChange()" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label>Rua</label>
+                <input type='text' [(ngModel)]="criarUsuario.logradouro" name="logradouro" id='logradouro'
+                  class="form-control" />
+              </div>
+              <div class="col">
+                <label>Numero</label>
+                <input type='text' [(ngModel)]="criarUsuario.numero" name="numero" id='numero' class="form-control" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label>Bairro</label>
+                <input type='text' [(ngModel)]="criarUsuario.bairro" name="bairro" id='bairro' class="form-control" />
+              </div>
+              <div class="col">
+                <label>Cidade</label>
+                <input type='text' [(ngModel)]="criarUsuario.localidade" name="localidade" id='localidade' class="form-control" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label>UF</label>
+                <input type='text' [(ngModel)]="criarUsuario.uf" name="uf"  id='uf' class="form-control" />
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-del" data-bs-dismiss="modal">Close</button>
+          <button (click)="adicionarUser()" class="btn btn-add" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"data-bs-dismiss="modal">
+            Cadastrar
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
